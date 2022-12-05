@@ -44,7 +44,12 @@ for (const file of commandFiles) {
 }
 
 client.once(Events.ClientReady, c => {
-	console.log(`Ready! Logged in as ${c.user.tag}`);
+	console.log(`Ready! Logged in as ${c.user.tag} and is in ${client.guilds.cache.size} servers`);
+    client.user.setPresence({
+        activities: [{ name: 'Outer Wilds' }],
+        status: 'dnd',
+        type: 'PLAYING',
+    });
 });
 
 client.on(Events.InteractionCreate, interaction => {
