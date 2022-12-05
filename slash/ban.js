@@ -21,12 +21,20 @@ module.exports = {
 			return interaction.reply('❌ | Vous n\'avez pas la permission d\'utiliser cette commande. ');
 		}
 		else {
-			const user = interaction.options.getUser('cible');
-			const raison = interaction.options.getString('raison');
+			const banned = interaction.options.getUser('cible');
+			const raison = interaction.options.getString('raison') || 'Aucune raison spécifiée.';
 
-			if (user == interaction.member.id) return interaction.reply('❌ | Vous ne pouvez pas vous bannir vous même.');
+			if (banned == interaction.member.id) return interaction.reply('❌ | Vous ne pouvez pas vous bannir vous même.');
+			if (interaction.member.guild.owner === banned) return interaction.reply('❌ | Vous ne pouvez pas bannir le créateur du serveur.');
 
-		return (interaction.reply(`🔥 | ${user} a été banni du serveur ! Raison : ${raison}`));
+			try {
+				await interaction.guild.members.ban(banned);
+				return (interaction.reply(`🔥 | ${banned} a été banni.e du serveur ! Raison : ${raison}`));
+			}
+			catch (e) {
+				return interaction.reply('❌ | Vous ne pouvez pas bannir cet utilisateur.');
+			}
+
 
 		}
 	},

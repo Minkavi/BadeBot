@@ -7,7 +7,7 @@ module.exports = {
         .setDescription('Hello World !'),
     async execute(interaction) {
 
-        await interaction.reply(interaction.member.voice.channel);
+        await interaction.reply({ content:'Hello World !' });
 
     },
 };
