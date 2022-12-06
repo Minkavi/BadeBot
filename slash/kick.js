@@ -28,7 +28,7 @@ module.exports = {
 			if (interaction.member.guild.owner === kicked) return interaction.reply('❌ | Vous ne pouvez pas virer le créateur du serveur.');
 
 			try {
-				await interaction.guild.members.ban(kicked);
+				await interaction.guild.members.kick(kicked);
 				return (interaction.reply(`🔥 | ${kicked} a été viré.e du serveur ! Raison : ${raison}`));
 			}
 			catch (e) {
