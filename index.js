@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 const { DisTube } = require('distube');
 const { default: SpotifyPlugin } = require('@distube/spotify');
-const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
+const { Client, Collection, Events, GatewayIntentBits, EmbedBuilder } = require('discord.js');
 const dotenv = require('dotenv');
 // const { YtDlpPlugin } = require('@distube/yt-dlp')
 const fs = require('node:fs');
@@ -71,7 +71,7 @@ client.on(Events.InteractionCreate, interaction => {
   }
 
   try {
-      return command.execute(interaction);
+      return command.execute(interaction, client);
   }
   catch (error) {
       console.error(error);
@@ -90,19 +90,19 @@ const status = queue =>
 client.distube
   .on('playSong', (queue, song) =>
     queue.textChannel.send({ embeds: [new EmbedBuilder()
-    .setColor('GREEN')
+    .setColor('0x00FF00')
     .setDescription(`🎶 | Joue \`${song.name}\` - \`${song.formattedDuration}\`\nDemandé par: ${song.user}\n${status(queue)}.`)] },
     ))
 
   .on('addSong', (queue, song) =>
   queue.textChannel.send({ embeds: [new EmbedBuilder()
-    .setColor('GREEN')
+    .setColor('0x00FF00')
     .setDescription(`✅ | ${song.name} - \`${song.formattedDuration}\` a été ajouté à la file d'attente par : ${song.user}.`)] },
     ))
 
   .on('addList', (queue, playlist) =>
     queue.textChannel.send({ embeds: [new EmbedBuilder()
-    .setColor('GREEN')
+    .setColor('0x00FF00')
     .setDescription(`✅ | La playlist \`${playlist.name}\` (${playlist.songs.length} musiques) a été ajouté à la file d'attente.\n${status(queue)}`)] },
     ))
 
@@ -113,13 +113,13 @@ client.distube
 
   .on('empty', channel =>
     channel.send({ embeds: [new EmbedBuilder()
-    .setColor('GREEN')
+    .setColor('0x00FF00')
     .setDescription('🍃 | Le canal vocal est vide ! Je quitte le canal...')] },
     ))
 
   .on('searchNoResult', (message, query) =>
     message.channel.send({ embeds: [new EmbedBuilder()
-    .setColor('RED')
+    .setColor('0xFF0000')
     .setDescription(`❌ | Aucun résultats trouvé pour \`${query}\`!`)] },
   ))
 
