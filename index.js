@@ -12,7 +12,9 @@ const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildVoiceStates,
+    GatewayIntentBits.GuildMessages,
     GatewayIntentBits.GuildMembers,
+    GatewayIntentBits.MessageContent
   ],
 });
 
@@ -20,7 +22,7 @@ dotenv.config();
 const TOKEN = process.env.TOKEN;
 
 client.distube = new DisTube(client, {
-	leaveOnStop: false,
+	leaveOnStop: true,
 	emitNewSongOnly: true,
 	emitAddSongWhenCreatingQueue: false,
 	emitAddListWhenCreatingQueue: false,
@@ -28,6 +30,7 @@ client.distube = new DisTube(client, {
 	  new SpotifyPlugin({
 		emitEventsAfterFetching: true
 	  }),
+    //new YtDlpPlugin()
 	]
   })
 
@@ -60,6 +63,7 @@ client.once(Events.ClientReady, c => {
 });
 
 
+
 client.on(Events.InteractionCreate, interaction => {
   if (!interaction.isChatInputCommand()) return;
 
@@ -81,48 +85,47 @@ client.on(Events.InteractionCreate, interaction => {
 
 module.exports = client;
 
+const status = (queue) =>
+  `Volume: \`${queue.volume}%\` | Filtres: \`${queue.filters.names.join(', ') || 'Non'}\` | Boucle: \`${
+    queue.repeatMode ? (queue.repeatMode === 2 ? 'Tout Queue' : 'Cette musique') : 'Non'
+  }\` | Autoplay: \`${queue.autoplay ? 'Oui' : 'Non'}\``;
 
-const status = queue =>
-  `Volume: \`${queue.volume}%\` | Filter: \`${queue.filters.names.join(', ') || 'Off'}\` | Loop: \`${
-    queue.repeatMode ? (queue.repeatMode === 2 ? 'All Queue' : 'This Song') : 'Off'
-  }\` | Autoplay: \`${queue.autoplay ? 'On' : 'Off'}\``;
 
-client.distube
-  .on('playSong', (queue, song) =>
+  client.distube.on('playSong', (queue, song) =>
     queue.textChannel.send({ embeds: [new EmbedBuilder()
     .setColor('0x00FF00')
     .setDescription(`🎶 | Joue \`${song.name}\` - \`${song.formattedDuration}\`\nDemandé par: ${song.user}\n${status(queue)}.`)] },
-    ))
+    ));
 
-  .on('addSong', (queue, song) =>
+  client.distube.on('addSong', (queue, song) =>
   queue.textChannel.send({ embeds: [new EmbedBuilder()
     .setColor('0x00FF00')
     .setDescription(`✅ | ${song.name} - \`${song.formattedDuration}\` a été ajouté à la file d'attente par : ${song.user}.`)] },
-    ))
+    ));
 
-  .on('addList', (queue, playlist) =>
+  client.distube.on('addList', (queue, playlist) =>
     queue.textChannel.send({ embeds: [new EmbedBuilder()
     .setColor('0x00FF00')
     .setDescription(`✅ | La playlist \`${playlist.name}\` (${playlist.songs.length} musiques) a été ajouté à la file d'attente.\n${status(queue)}`)] },
-    ))
+    ));
 
-  .on('error', (channel, e) => {
-    if (channel) channel.send(`❌ | An error encountered: ${e.toString().slice(0, 1974)}`);
-    else console.error(e);
-   })
+  client.distube.on('error', (queue, e) => {
+    queue.textChannel.send(`❌ | An error encountered: ${e.toString().slice(0, 1974)}`)
+    console.error(e)
+  });
 
-  .on('empty', channel =>
-    channel.send({ embeds: [new EmbedBuilder()
+  client.distube.on('empty', queue =>
+  queue.textChannel.send({ embeds: [new EmbedBuilder()
     .setColor('0x00FF00')
     .setDescription('🍃 | Le canal vocal est vide ! Je quitte le canal...')] },
-    ))
+    ));
 
-  .on('searchNoResult', (message, query) =>
-    message.channel.send({ embeds: [new EmbedBuilder()
+  client.distube.on('searchNoResult', (queue, query) =>
+  queue.textChannel.send({ embeds: [new EmbedBuilder()
     .setColor('0xFF0000')
     .setDescription(`❌ | Aucun résultats trouvé pour \`${query}\`!`)] },
-  ))
+  ));
 
-  .on('finish', queue => queue.textChannel.send('Fini!'));
+  client.distube.on('finish', queue => queue.textChannel.send('Fini!'));
 
 client.login(TOKEN);
