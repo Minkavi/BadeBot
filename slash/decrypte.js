@@ -105,6 +105,21 @@ module.exports = {
             "Avant de commencer la vidéo j'aimerais vous parler d'instant gaming",
             "salut c'est hugo aujourd'hui je décrypte ton adresse et ton numéro d'étage",
             "Je n'ai pas compris pourquoi il ne faut pas écrire 'macron ordure'? On risque gros à écrire 'macron ordure'? Parce que je ne voudrais pas avoir des histoires avec les forces de l'ordre parce que j'aurai écrit 'macron ordure'. C'est dingue il y a vraiment des gens qui pensent que macron est une ordure ou ils disent juste 'macron ordure' pour lui rappeler de sortir les poubelles, il n'y a que juste une virgule manquante genre 'macron, ordure'. Mais peut être que c'est tout aussi répréhensible d'écrire 'macron ordure' avec ou sans virgule, je m'interroge. Bref si qqun peut m'expliquer pourquoi on ne peut pas écrire 'macron ordure', je suis preneur, je ne voudrais pas me retrouver en garde à vue pour avoir écrit 'macron ordure'. Merci",
+            "je suis passe partout du forboillare jemmaine les casse cou dans les traquenare",
+            "aujourd'hui c'est frites",
+            "Jaim la bite en vrai",
+            "ASSEZ DE PENSÉES HOMOSEXUELLE C'EST LE TEMPS DES ACTIONS",
+            "Etre gay faire crime",
+            "etre crime faire gay",
+            "Être gay faire ton père",
+            "la cuvette semi relevée moi je suis le smiley blasé -_-",
+            "UNE MINE !",
+            "j'ai décidé d'écrire ma propre histoire",
+            "Je suis constipé je ne peux pas répondre dsl",
+            "chaque jour est le lendemain du jour d'avant mais le jour d'avant du lendemain",
+            "Tout ceci me rappelle une célèbre énigme veux-tu l'entendre",
+            "jorjor well",
+            "femboy un jour femboy toujours enculer",
         ]
         
 
