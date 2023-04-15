@@ -7,7 +7,7 @@ module.exports = {
         .setName('decrypte')
         .setDescription('Hugo vien décrypter.'),
     async execute(interaction) {
-        let files = fs.readdirSync("img/");
+        let files = fs.readdirSync("assets/imgUgo/");
         const options = [
             "Ca me rapelle la fois ou maddy a baiser ma mère",
             "J'etais comme ca :0",
@@ -120,11 +120,23 @@ module.exports = {
             "Tout ceci me rappelle une célèbre énigme veux-tu l'entendre",
             "jorjor well",
             "femboy un jour femboy toujours enculer",
+            "c'est dans ta gueule 🤓",
+            "simon pouéche",
+            "simon pêche",
+            "Tous ceux qui ne sautent pas ne sont pas marseillais",
+            "le cousin de paul mirabelle",
+            "la mirabelle de paul cousin",
+            "quoicoubaise ta reum hop la",
+            "ces pas cool",
+            "Impossible ! Des Hybrides sur Aïur ?",
+            "Ils ont pop smoke fumer !",
+            "Le saviez-vous? Les résidents français chient chaque jour de gros cacas sans rides dans l'eau potable chlorée des toilettes occidentales?",
+            "La vie est une pillule contraceptive"
         ]
         
 
         const random = options[Math.floor(Math.random() * options.length)]
-        await interaction.reply({ content:`${random}`, files: ['./img/ugor.png'] });
+        await interaction.reply({ content:`${random}`, files: ['.assets/imgUgo/ugor.png'] });
 
     },
 };
