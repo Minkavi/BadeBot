@@ -136,7 +136,7 @@ module.exports = {
         
 
         const random = options[Math.floor(Math.random() * options.length)]
-        await interaction.reply({ content:`${random}`, files: ['.assets/imgUgo/ugor.png'] });
+        await interaction.reply({ content:`${random}`, files: ['./assets/imgUgo/ugor.png'] });
 
     },
 };
