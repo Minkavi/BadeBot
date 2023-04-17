@@ -6,6 +6,7 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('decrypte')
         .setDescription('Hugo vien décrypter.'),
+        
     async execute(interaction) {
         let files = fs.readdirSync("assets/imgUgo/");
         const options = [

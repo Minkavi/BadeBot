@@ -6,6 +6,7 @@ const dotenv = require('dotenv');
 // const { YtDlpPlugin } = require('@distube/yt-dlp')
 const fs = require('node:fs');
 const path = require('node:path');
+const Canvas = require('@napi-rs/canvas');
 
 
 const client = new Client({

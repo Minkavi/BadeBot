@@ -16,6 +16,7 @@
     "@distube/spotify": "^1.4.2",
     "@distube/yt-dlp": "^1.1.3",
     "@distube/ytdl-core": "^4.11.7",
+    "@napi-rs/canvas": "^0.1.40",
     "ascii-table": "^0.0.9",
     "discord-api-types": "^0.37.20",
     "discord-player": "^5.2.2",
