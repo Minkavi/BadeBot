@@ -132,9 +132,36 @@ module.exports = {
             "Impossible ! Des Hybrides sur Aïur ?",
             "Ils ont pop smoke fumer !",
             "Le saviez-vous? Les résidents français chient chaque jour de gros cacas sans rides dans l'eau potable chlorée des toilettes occidentales?",
-            "La vie est une pillule contraceptive"
+            "La vie est une pillule contraceptive",
+            "le caca du cul",
+            "Tu es tilté boubou",
+            "Zerator a lancé son live ! Rejoins-le maintenant",
+            "putaingue y zont mis le chiengue dans le paingue",
+            "Le musée ne reviendra pas",
+            "nous sommes les daft punk",
+            "T’a les cramptés?",
+            "ces moi jai voler tous les cramptés lol",
+            "apagnan",
+            "Squeezie a un joli cul",
+            "Tu devrais t'intéresser à l'Atlantide, car tu as un rapport avec le quetzalcoatl, le dieu oiseau-serpent des toltèques.",
+            "j'ai toujours raison",
+            "Je viens de recaler une meuf fraîche quel sensation incroyable  les gars putain , détruisez leurs égo , leurs confiance en soi pour leurs montrer qu’on peut pas tout avoir dans la vie . J’espère qu’elle va douter d’elle , redescendre sur terre et se remettre en question",
+            "Mon petit, cette paix est ce pourquoi luttent tous les vrais guerriers",
+            "salut c'est hugo masterclass allez tchao la bise",
+            "Tu connais l'histoire de Paf le chien ? C'est l'histoire d'un chien qui traverse la rue. Une voiture arrive, et paf ! le chien.",
+            "Chie",
+            "Chie toi dessus, maintenant.",
+            "Saviez-vous qu'en étant complètement nu vous chantiez à la perfection ? Essayez-donc !",
+            "En parlant de décryptage, Luke, connais-tu cette énigme ?",
+            "Le savais-tu ? J'ai un double de tes clés",
+            "Hugo décrypte ton numéro de sécurité sociale"
         ]
         
+        
+
+    
+
+
 
         const random = options[Math.floor(Math.random() * options.length)]
         await interaction.reply({ content:`${random}`, files: ['./assets/imgUgo/ugor.png'] });
