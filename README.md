@@ -22,5 +22,22 @@ Link to invite the bot :
 
 It needs Administrator requirement as there is still a ban and kick command, and might need those for further developement.
 
+## How to deploy :
+Make sure you have Node and npm installed, you can find them here : [NodeJS.org](https://nodejs.org/fr/download)
+
+You need to have made a Discord Bot in [Discord Developper Portal](https://discord.com/developers/applications)
+
+* Pull the Git repo in an empty folder.
+* Open this folder in a Terminal
+* Type ```npm install``` (it will download all the packages required)
+* Create a .env file
+* It should looks like this :
+
+  <img width="343" alt="image" src="https://github.com/Minkavi/BadeBot/assets/119850615/1ea94d95-192f-4c89-8f93-ba4704fe8efa">
+* To deploy commands : ```node deploy_command.js```
+* To delete commands : ```node delete_command.js```
+* To run the bot : ```node .```or ```node index.js```
+
+Enjoy your new bot.
 
 made by little fragile french hand of mady2ouf
