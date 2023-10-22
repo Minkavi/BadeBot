@@ -215,12 +215,6 @@ module.exports = {
             "le vrai slim shaddy",
         ]
         
-        
-
-    
-
-
-
         const random = options[Math.floor(Math.random() * options.length)]
         await interaction.reply({ content:`${random}`, files: ['./assets/imgUgo/ugor.png'] });
 

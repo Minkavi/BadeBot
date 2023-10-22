@@ -7,7 +7,7 @@ const TOKEN = process.env.TOKEN;
 const clientID = process.env.clientID;
 
 const commands = [];
-// Prend toutes les commandes du dossier slash
+// Takes all command from /slash
 const commandFiles = fs.readdirSync('./slash').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
@@ -17,7 +17,7 @@ for (const file of commandFiles) {
 
 const rest = new REST({ version: '10' }).setToken(TOKEN);
 
-// et deploi les commandes !
+// and deploy them !
 (async () => {
 	try {
 		console.log(`Started refreshing ${commands.length} application (/) commands.`);

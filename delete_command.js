@@ -7,7 +7,6 @@ const clientID = process.env.clientID;
 
 const rest = new REST({ version: '10' }).setToken(TOKEN);
 
-// et deploi les commandes !
 (async () => {
 	try {
 		console.log('Deleting commands');
