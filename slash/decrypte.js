@@ -213,6 +213,17 @@ module.exports = {
             "il fait trop genre en mode il est là et",
             "antoine daniel",
             "le vrai slim shaddy",
+            "jvais te decrypter macron tu mentends DECRYPTER si tu me coupes encore une seule fois la parole",
+            "je m'en bas les couilles de l'avion fils de pute",
+            "mario wonder",
+            "je n'aime pas les haricots verts et les brocolis",
+            "Sex homosexuel",
+            "pourquoi ne vas tu donc pas décrypter des putes",
+            "Pruah de totk",
+            "Pruah de botw",
+            "maouno",
+            "Attends, tu pense que TON avis j'en ai quelques choses à branler le frustré? Oo Tu te penses plus important que tu le seras jamais, redescend un peu mon mignon. T'as ouvert ta gueule trop vite et pour rien, Retournes dans ton silence, c'était très bien.",
+            "quan le mac debarque ser la panique aux far wouest",
         ]
         
         const random = options[Math.floor(Math.random() * options.length)]
