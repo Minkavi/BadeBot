@@ -227,7 +227,7 @@ module.exports = {
         ]*/
         
 
-        const options = fs.readFileSync('assets/sentencUgo/sentences.txt', 'utf8').split('\n')
+        const options = fs.readFileSync('assets/sentencesUgo/sentences.txt', 'utf8').split('\n')
 
         const random = options[Math.floor(Math.random() * options.length)]
         await interaction.reply({ content:`${random}`, files: ['./assets/imgUgo/ugor.png'] });
