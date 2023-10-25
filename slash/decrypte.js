@@ -9,7 +9,7 @@ module.exports = {
         
     async execute(interaction) {
         let files = fs.readdirSync("assets/imgUgo/");
-        const options = [
+        /*const options = [
             "Ca me rapelle la fois ou maddy a baiser ma mère",
             "J'etais comme ca :0",
             "je deteste quans ça m'arrive",
@@ -224,8 +224,11 @@ module.exports = {
             "maouno",
             "Attends, tu pense que TON avis j'en ai quelques choses à branler le frustré? Oo Tu te penses plus important que tu le seras jamais, redescend un peu mon mignon. T'as ouvert ta gueule trop vite et pour rien, Retournes dans ton silence, c'était très bien.",
             "quan le mac debarque ser la panique aux far wouest",
-        ]
+        ]*/
         
+
+        const options = fs.readFileSync('assets/sentencUgo/sentences.txt', 'utf8').split('\n')
+
         const random = options[Math.floor(Math.random() * options.length)]
         await interaction.reply({ content:`${random}`, files: ['./assets/imgUgo/ugor.png'] });
 
