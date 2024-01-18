@@ -30,20 +30,24 @@ module.exports = {
         const random = Math.floor(Math.random() * (8.0 - 1.0) + 1.0)
         const random2 = Math.floor(Math.random() * (200.0 - 1.0) + 2.0)
 
-        const background = await Canvas.loadImage(imgVille.url);
+        try {
+            const background = await Canvas.loadImage(imgVille.url);
 
-        context.drawImage(background, 0, 0, canvas.width, canvas.height);
+            context.drawImage(background, 0, 0, canvas.width, canvas.height);
 
-        context.font = '35px IMPACT';
-        context.fillStyle = '#ffffff';
+            context.font = '35px IMPACT';
+            context.fillStyle = '#ffffff';
 
-        context.lineWidth = 4;
-        context.strokeText(nameVille, random2, canvas.height / random);
-        context.fillText(nameVille, random2, canvas.height / random);
+            context.lineWidth = 4;
+            context.strokeText(nameVille, random2, canvas.height / random);
+            context.fillText(nameVille, random2, canvas.height / random);
 
-        const attachment = new AttachmentBuilder(await canvas.encode('jpeg'), { name: 'doxxed.jpeg' });
+            const attachment = new AttachmentBuilder(await canvas.encode('jpeg'), { name: 'doxxed.jpeg' });
 
-        await interaction.reply({ files: [attachment] });
-
+            await interaction.reply({ files: [attachment] });
+        } catch (error) {
+            console.error(error)
+            await interaction.reply('Erreur lors de la création de l\'image');
+        }
     },
 };
