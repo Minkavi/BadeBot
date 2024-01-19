@@ -1,9 +1,8 @@
 /* eslint-disable indent */
-const { Client, Collection, Events, GatewayIntentBits, EmbedBuilder } = require('discord.js');
+const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 const dotenv = require('dotenv');
 const fs = require('node:fs');
 const path = require('node:path');
-const Canvas = require('@napi-rs/canvas');
 
 
 const client = new Client({
